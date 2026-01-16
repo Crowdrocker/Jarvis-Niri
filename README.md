@@ -67,8 +67,8 @@
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Crowdrocker/wehttamsnaps-dotfiles.git ~/wehttamsnaps-dotfiles
-cd ~/wehttamsnaps-dotfiles
+git clone https://github.com/Crowdrocker/Jarvis-Niri.git ~/Jarvis-Niri
+cd ~/Jarvis-Niri
 ```
 
 ### 2. Run the Installation Script
@@ -203,7 +203,7 @@ Press `Mod + H` anytime to see the full keybindings cheat sheet.
 
 ### Adding Widgets
 ```bash
-cd ~/wehttamsnaps-dotfiles/scripts
+cd ~/Jarvis-Niri/scripts
 ./create-widget.sh
 ```
 
@@ -215,8 +215,8 @@ cd ~/wehttamsnaps-dotfiles/scripts
 
 ### Customizing Sounds
 Place your sounds in:
-- `~/wehttamsnaps-dotfiles/sounds/jarvis/` for J.A.R.V.I.S. voice
-- `~/wehttamsnaps-dotfiles/sounds/idroid/` for iDroid voice
+- `~/Jarvis-Niri/sounds/jarvis/` for J.A.R.V.I.S. voice
+- `~/Jarvis-Niri/sounds/idroid/` for iDroid voice
 
 Run `save-configs.sh` to sync to system.
 
