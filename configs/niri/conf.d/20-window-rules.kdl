@@ -1,0 +1,447 @@
+// =============================================================================
+// WEHTTAMSNAPS - NIRI WINDOW RULES
+// Window behavior and properties configuration
+// =============================================================================
+// Last Updated: 2024-01-XX
+// =============================================================================
+
+// ================================
+// FULLSCREEN APPLICATIONS
+// ================================
+
+// Brave Browser
+window-rule {
+    match app-id="brave-browser"
+    open-fullscreen true
+}
+
+// Steam
+window-rule {
+    match app-id="steam"
+    open-fullscreen true
+}
+
+// Kate Editor
+window-rule {
+    match app-id="kate"
+    open-fullscreen true
+}
+
+// OBS Studio
+window-rule {
+    match app-id="obs"
+    open-fullscreen true
+}
+
+// ================================
+// FLOATING WINDOWS
+// ================================
+
+// System configuration
+window-rule {
+    match app-id="nwg-look"
+    open-floating true
+    open-centered true
+}
+
+window-rule {
+    match app-id="pavucontrol"
+    open-floating true
+    open-centered true
+}
+
+window-rule {
+    match app-id="blueman-manager"
+    open-floating true
+    open-centered true
+}
+
+window-rule {
+    match app-id="nm-connection-editor"
+    open-floating true
+    open-centered true
+}
+
+window-rule {
+    match app-id="qt6ct"
+    open-floating true
+    open-centered true
+}
+
+window-rule {
+    match app-id="kvantummanager"
+    open-floating true
+    open-centered true
+}
+
+// Gaming tools
+window-rule {
+    match app-id="lutris"
+    open-floating true
+}
+
+window-rule {
+    match app-id="heroic"
+    open-floating true
+}
+
+window-rule {
+    match app-id="protonup-qt"
+    open-floating true
+}
+
+// Communication
+window-rule {
+    match app-id="discord"
+    open-floating true
+}
+
+window-rule {
+    match app-id="WebCord"
+    open-floating true
+}
+
+window-rule {
+    match app-id="telegram-desktop"
+    open-floating true
+}
+
+// Media
+window-rule {
+    match app-id="vlc"
+    open-floating true
+}
+
+window-rule {
+    match app-id="spotify"
+    open-floating true
+}
+
+window-rule {
+    match app-id="mpv"
+    open-floating true
+}
+
+// Productivity
+window-rule {
+    match app-id="obs"
+    open-floating true
+}
+
+window-rule {
+    match app-id="thunderbird"
+    open-floating true
+}
+
+window-rule {
+    match app-id="evolution"
+    open-floating true
+}
+
+// Image viewers
+window-rule {
+    match app-id="qview"
+    open-floating true
+}
+
+window-rule {
+    match app-id="loupe"
+    open-floating true
+}
+
+window-rule {
+    match app-id="nomacs"
+    open-floating true
+}
+
+// Calculator
+window-rule {
+    match app-id="gnome-calculator"
+    open-floating true
+    open-centered true
+}
+
+// ================================
+// GAME WINDOW RULES
+// ================================
+
+// Wine/Proton games
+window-rule {
+    match app-id-rx="^(wine|proton).*"
+    open-floating true
+}
+
+// Steam games
+window-rule {
+    match app-id-rx="^steam_app_.*"
+    open-fullscreen true
+}
+
+// Lutris games
+window-rule {
+    match app-id-rx="^lutris.*"
+    open-floating true
+}
+
+// Heroic games
+window-rule {
+    match app-id-rx="^heroic.*"
+    open-floating true
+}
+
+// ================================
+// PHOTOGRAPHY APPLICATIONS
+// ================================
+
+// Darktable
+window-rule {
+    match app-id="darktable"
+    open-floating true
+}
+
+// GIMP
+window-rule {
+    match app-id="gimp"
+    open-floating true
+}
+
+// Krita
+window-rule {
+    match app-id="krita"
+    open-floating true
+}
+
+// DigiKam
+window-rule {
+    match app-id="digikam"
+    open-floating true
+}
+
+// RawTherapee
+window-rule {
+    match app-id="rawtherapee"
+    open-floating true
+}
+
+// ================================
+// TERMINAL RULES
+// ================================
+
+// Ghostty
+window-rule {
+    match app-id="ghostty"
+    // Default tiling for productivity
+    open-floating false
+}
+
+// Alacritty (fallback)
+window-rule {
+    match app-id="alacritty"
+    open-floating false
+}
+
+// Kitty
+window-rule {
+    match app-id="kitty"
+    open-floating false
+}
+
+// ================================
+// MODDING TOOLS (Wine/Proton)
+// ================================
+
+// Vortex Mod Manager
+window-rule {
+    match app-id="vortex"
+    open-floating true
+}
+
+// Mod Organizer 2
+window-rule {
+    match app-id-rx="^(mo2|modorganizer).*"
+    open-floating true
+}
+
+// Wabbajack
+window-rule {
+    match app-id="wabbajack"
+    open-floating true
+}
+
+// ================================
+// WEBAPP RULES
+// ================================
+
+// YouTube
+window-rule {
+    match app-id-rx=".*youtube.*"
+    open-floating true
+    open-centered true
+}
+
+// Twitch
+window-rule {
+    match app-id-rx=".*twitch.*"
+    open-floating true
+    open-centered true
+}
+
+// Spotify Web
+window-rule {
+    match app-id-rx=".*spotify.*"
+    open-floating true
+}
+
+// Discord Web
+window-rule {
+    match app-id-rx=".*discord.*"
+    open-floating true
+}
+
+// ================================
+// SIZE & POSITION RULES
+// ================================
+
+// Terminal: Prefer tall columns
+window-rule {
+    match app-id="ghostty"
+    default-column-width { proportion 0.333; }
+}
+
+// Browser: Wide
+window-rule {
+    match app-id-rx="^(firefox|brave).*"
+    default-column-width { proportion 0.666; }
+}
+
+// File Manager: Medium
+window-rule {
+    match app-id="thunar"
+    default-column-width { proportion 0.5; }
+}
+
+// ================================
+// WORKSPACE ASSIGNMENTS
+// ================================
+
+// Workspace 1: Browser
+window-rule {
+    match app-id-rx="^(firefox|brave).*"
+    default-column-width { proportion 0.7; }
+}
+
+// Workspace 2: Terminal/Dev
+window-rule {
+    match app-id-rx="^(ghostty|alacritty|kitty|code|kate).*"
+    default-column-width { proportion 0.6; }
+}
+
+// Workspace 3: Gaming
+window-rule {
+    match app-id-rx="^(steam|lutris|heroic).*"
+    open-fullscreen true
+}
+
+// Workspace 4: Streaming/OBS
+window-rule {
+    match app-id="obs"
+    open-fullscreen true
+}
+
+// Workspace 5: Photography
+window-rule {
+    match app-id-rx="^(darktable|gimp|krita|digikam).*"
+    open-floating true
+}
+
+// Workspace 7: Communication
+window-rule {
+    match app-id-rx="^(discord|WebCord|telegram).*"
+    open-floating true
+}
+
+// Workspace 8: Music
+window-rule {
+    match app-id-rx="^(spotify|vlc|mpv).*"
+    open-floating true
+}
+
+// ================================
+// SPECIAL CASES
+// ================================
+
+// Welcome screen
+window-rule {
+    match app-id="wehttamsnaps-welcome"
+    open-floating true
+    open-centered true
+}
+
+// KeyHints
+window-rule {
+    match app-id-rx=".*keyhints.*"
+    open-floating true
+    open-centered true
+}
+
+// Color picker
+window-rule {
+    match app-id="hyprpicker"
+    open-floating true
+}
+
+// Screenshot tool
+window-rule {
+    match app-id="swappy"
+    open-floating true
+    open-centered true
+}
+
+// Logout menu
+window-rule {
+    match app-id="wlogout"
+    open-floating true
+    open-centered true
+}
+
+// ================================
+// PERFORMANCE OPTIMIZATIONS
+// ================================
+
+// Disable damage tracking for fullscreen apps
+window-rule {
+    match app-id-rx="^(steam_app_|wine).*"
+    disable-damage-tracking true
+}
+
+// VSync toggle for games
+window-rule {
+    match app-id-rx="^(steam_app_|wine).*"
+    vsync false
+}
+
+// ================================
+// ACCESSIBILITY
+// ================================
+
+// High contrast for terminal
+window-rule {
+    match app-id="ghostty"
+    // Force high contrast (configured in Ghostty config)
+}
+
+// Large text for image viewers
+window-rule {
+    match app-id-rx="^(qview|loupe|nomacs).*"
+    // Zoomed by default (configured in app)
+}
+
+// =============================================================================
+// END OF WINDOW RULES
+// =============================================================================
+// Notes:
+// - Floating windows are automatically centered with the 'open-centered' rule
+// - Fullscreen apps launch in true fullscreen mode
+// - Workspace-specific rules override general rules
+// - Gaming apps have performance optimizations applied
+// =============================================================================

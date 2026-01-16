@@ -1,0 +1,169 @@
+# =============================================================================
+# WehttamSnaps - Core Package List
+# Essential packages for J.A.R.V.I.S. themed Niri setup
+# =============================================================================
+# Usage: paru -S --needed - < core.list.txt
+# =============================================================================
+
+# === SYSTEM ESSENTIALS ===
+base
+base-devel
+linux
+linux-firmware
+linux-headers
+amd-ucode
+intel-ucode
+
+# === WAYLAND & COMPOSITOR ===
+niri
+niri-flake
+xorg-xwayland
+wayland
+seatd
+
+# === TERMINAL & SHELL ===
+ghostty
+zsh
+zsh-completions
+zsh-autosuggestions
+zsh-syntax-highlighting
+starship
+fastfetch
+
+# === QUICKSHELL (NOCTALIA) ===
+quickshell
+qt6-base
+qt6-declarative
+qt6-quickcontrols2
+
+# === THEMING ===
+catppuccin-gtk-theme-mocha
+kvantum-theme-catppuccin-mocha
+papirus-icon-theme
+nordic-cursor-theme
+adwaita-icon-theme
+
+# === FONTS ===
+ttf-fira-code
+ttf-fira-sans
+ttf-jetbrains-mono-nerd
+ttf-material-symbols-variable-git
+noto-fonts
+noto-fonts-cjk
+noto-color-emoji-fontconfig
+
+# === DISPLAY & LOGIN ===
+sddm
+sddm-sugar-candy-git
+swaylock-effects-git
+wlogout
+
+# === AUDIO SYSTEM ===
+pipewire
+pipewire-alsa
+pipewire-pulse
+pipewire-jack
+pipewire-audio
+wireplumber
+pavucontrol
+qpwgraph
+easyeffects
+playerctl
+
+# === GAMING ===
+steam
+gamemode
+gamescope
+proton-ge-custom-bin
+protontricks
+protonup-qt
+lutris
+wine-staging
+winetricks
+
+# === GRAPHICS ===
+mesa
+mesa-utils
+vulkan-tools
+lib32-mesa
+lib32-vulkan-mesa-layers
+lib32-vulkan-radeon
+dxvk-bin
+vkbasalt
+
+# === PRODUCTIVITY ===
+thunar
+thunar-archive-plugin
+thunar-media-tags-plugin
+thunar-volman
+rofi
+wofi
+cliphist
+wl-clipboard
+grim
+slurp
+swappy
+
+# === BROWSER ===
+firefox
+brave-bin
+
+# === DEVELOPMENT ===
+git
+github-desktop-bin
+neovim
+code
+kate
+
+# === PHOTOGRAPHY ===
+digikam
+darktable
+gimp
+gimp-plugin-gmic
+gimp-plugin-resynthesizer
+krita
+
+# === MEDIA ===
+vlc
+mpv
+mpv-mpris
+obs-studio
+
+# === COMMUNICATION ===
+discord
+telegram-desktop
+
+# === UTILITIES ===
+btop
+htop
+bat
+eza
+zoxide
+fd
+ripgrep
+fzf
+jq
+yq
+tree
+ncdu
+
+# === NETWORK ===
+networkmanager
+networkmanager-openvpn
+blueman
+bluez-utils
+
+# === FLATPAK ===
+flatpak
+flatseal
+
+# === SYSTEM TOOLS ===
+reflector
+timeshift
+btrfs-assistant
+smartmontools
+
+# === DOCUMENTATION ===
+man-db
+man-pages
+tldr

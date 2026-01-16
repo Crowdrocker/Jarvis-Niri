@@ -1,0 +1,222 @@
+// =============================================================================
+// WEHTTAMSNAPS - NIRI AUTOSTART APPLICATIONS
+// Applications that start automatically with Niri
+// =============================================================================
+// Last Updated: 2024-01-XX
+// =============================================================================
+
+// ================================
+// SYSTEM SERVICES
+// ================================
+
+// Wayland compatibility
+spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" "DISPLAY"
+
+// ================================
+// AUDIO SYSTEM
+// ================================
+
+// Start PipeWire and WirePlumber (usually handled by systemd, but ensuring here)
+spawn-at-startup "sh" "-c" "sleep 1 && pkill -x wireplumber; wireplumber &"
+
+// Initialize sound system state
+spawn-at-startup "sh" "-c" "sleep 2 && mkdir -p ~/.cache/wehttamsnaps && echo 'jarvis' > ~/.cache/wehttamsnaps/sound-mode.state"
+
+// ================================
+// THEME & APPEARANCE
+// ================================
+
+// Set GTK theme
+spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "gtk-theme" "Catppuccin-Mocha-Standard-Blue-dark"
+spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "icon-theme" "Papirus-Dark"
+spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "cursor-theme" "Nordic-cursors"
+spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "font-name" "Fira Sans 11"
+
+// Set Qt theme
+spawn-at-startup "sh" "-c" "sleep 1 && export QT_QPA_PLATFORMTHEME=qt6ct && qt6ct -apply-gtk-theme"
+
+// Apply Kvantum theme
+spawn-at-startup "sh" "-c" "sleep 2 && kvantummanager --set Catppuccin-Mocha-Blue"
+
+// ================================
+// BACKGROUND / WALLPAPER
+// ================================
+
+// Set wallpaper (using swaybg or swww)
+spawn-at-startup "sh" "-c" "sleep 1 && swaybg -i ~/.config/wehttamsnaps/wallpapers/default.jpg -m fill &"
+
+// Alternative: using swww (more features, supports transitions)
+// spawn-at-startup "sh" "-c" "sleep 1 && swww init && swww img ~/.config/wehttamsnaps/wallpapers/default.jpg --transition-type grow --transition-fps 60"
+
+// ================================
+// NOTIFICATIONS
+// ================================
+
+// Notification daemon
+spawn-at-startup "mako"
+
+// ================================
+// POLKIT AGENT
+// ================================
+
+// Polkit authentication agent
+spawn-at-startup "sh" "-c" "sleep 2 && /usr/lib/polkit-kde-authentication-agent-1 &"
+
+// ================================
+// CLIPBOARD MANAGERS
+// ================================
+
+// Clipboard history
+spawn-at-startup "sh" "-c" "sleep 2 && wl-paste -t text --watch cliphist store &"
+
+// ================================
+// INPUT METHODS
+// ================================
+
+// Input method (for CJK support)
+// spawn-at-startup "fcitx5" "-d"
+
+// ================================
+// NETWORK
+// ================================
+
+// Network Manager applet
+spawn-at-startup "nm-applet" "--indicator"
+
+// Bluetooth manager
+spawn-at-startup "blueman-applet"
+
+// ================================
+// POWER MANAGEMENT
+// ================================
+
+// Power profiles daemon
+spawn-at-startup "power-profiles-daemon"
+
+// Screen brightness control
+spawn-at-startup "sh" "-c" "brightnessctl set 100%"
+
+// Screen locker idle
+spawn-at-startup "sh" "-c" "swayidle -w timeout 300 'swaylock-effects' timeout 600 'systemctl suspend' before-sleep 'swaylock-effects' &"
+
+// ================================
+// GAMING OPTIMIZATIONS
+// ================================
+
+// GameMode daemon
+spawn-at-startup "gamemoded" "-r"
+
+// ================================
+// MEDIA PLAYER
+// ================================
+
+// Media player control daemon (MPRIS)
+spawn-at-startup "playerctld"
+
+// ================================
+// SYSTRAY / STATUS BAR
+// ================================
+
+// Quickshell (Noctalia) - replaces Waybar
+spawn-at-startup "sh" "-c" "sleep 3 && quickshell -c ~/.config/wehttamsnaps/noctalia/config.qml &"
+
+// ================================
+// J.A.R.V.I.S. INTEGRATION
+// ================================
+
+// Play J.A.R.V.I.S. startup sound
+spawn-at-startup "sh" "-c" "sleep 4 && sound-system startup"
+
+// Show welcome screen (only on first boot)
+spawn-at-startup "sh" "-c" "sleep 5 && python3 ~/.config/wehttamsnaps/quickshell-apps/welcome.py"
+
+// ================================
+// PRODUCTIVITY TOOLS
+// ================================
+
+// Dropbox (if used)
+// spawn-at-startup "dropbox"
+
+// Syncthing (if used)
+// spawn-at-startup "syncthing" "-no-browser"
+
+// ================================
+// BROWSER STARTUP
+// ================================
+
+// Firefox (restore previous session)
+spawn-at-startup "sh" "-c" "sleep 6 && firefox &"
+
+// ================================
+// TERMINAL
+// ================================
+
+// Start a Ghostty terminal (optional - uncomment if desired)
+// spawn-at-startup "sh" "-c" "sleep 7 && ghostty &"
+
+// ================================
+// COMMUNICATION
+// ================================
+
+// Discord (start minimized in background)
+spawn-at-startup "sh" "-c" "sleep 8 && discord --start-minimized &"
+
+// Telegram (start minimized in background)
+// spawn-at-startup "sh" "-c" "sleep 8 && telegram-desktop -startintray &"
+
+// ================================
+// MUSIC
+// ================================
+
+// Spotify (start minimized in background)
+// spawn-at-startup "sh" "-c" "sleep 9 && spotify &"
+
+// ================================
+// DEVELOPMENT TOOLS
+// ================================
+
+// GitHub Desktop (optional)
+// spawn-at-startup "sh" "-c" "sleep 10 && github-desktop &"
+
+// ================================
+// CUSTOM SCRIPTS
+// ================================
+
+// Run custom startup scripts
+spawn-at-startup "sh" "-c" "[ -f ~/.config/wehttamsnaps/scripts/startup.sh ] && ~/.config/wehttamsnaps/scripts/startup.sh"
+
+// ================================
+// PERFORMANCE MONITORING
+// ================================
+
+// CPU temperature and performance monitoring (optional)
+// spawn-at-startup "corectrl"
+
+// ================================
+// ACCESSIBILITY
+// ================================
+
+// Screen magnifier (if needed)
+// spawn-at-startup "magnifier"
+
+// ================================
+// MISCELLANEOUS
+// ================================
+
+// Redshift (blue light filter) - alternative to wlsunset
+// spawn-at-startup "redshift-gtk"
+
+// Screen color temperature (using wlsunset)
+spawn-at-startup "sh" "-c" "wlsunset -l 37.77 -122.42 -T 5500 -t 3700 &"
+
+// =============================================================================
+// END OF AUTOSTART CONFIGURATION
+// =============================================================================
+// Notes:
+// 1. Adjust sleep times if applications start too early/late
+// 2. Comment out applications you don't want to autostart
+// 3. The order matters - dependencies should start before dependents
+// 4. Some applications may be started by systemd user services instead
+// 5. Check ~/config/wehttamsnaps/scripts/startup.sh for custom startup tasks
+// 6. Quickshell/Noctalia replaces Waybar for system tray and status bar
+// =============================================================================

@@ -1,0 +1,327 @@
+// =============================================================================
+// WEHTTAMSNAPS - NIRI KEYBINDINGS
+// Modular keybinds configuration
+// =============================================================================
+// Mod = SUPER (Windows Key)
+// Last Updated: 2024-01-XX
+// =============================================================================
+
+// ================================
+// SYSTEM KEYBINDINGS
+// ================================
+
+// Reload Niri configuration
+Mod+Shift+Ctrl+R { spawn "sh" "-c" "niri msg action reload-config && notify-send 'Niri' 'Configuration reloaded' -i dialog-information"; }
+
+// Show hotkey overlay
+Mod+Shift+Slash { spawn "sh" "-c" "niri msg action toggle-hotkey-overlay"; }
+
+// Quit Niri (exit compositor)
+Ctrl+Alt+Delete { spawn "wlogout"; }
+
+// Lock screen
+Mod+Alt+L { spawn "swaylock-effects"; }
+
+// Power off monitors
+Mod+Shift+P { spawn "sh" "-c" "brightnessctl set 0 && sleep 1 && brightnessctl set 100%"; }
+
+// ================================
+// APPLICATION LAUNCHERS
+// ================================
+
+// Application launcher (Quickshell/Noctalia)
+Mod+Space { spawn "sh" "-c" "env GDK_BACKEND=wayland fuzzel"; }
+
+// Terminal (Ghostty)
+Mod+Enter { spawn "ghostty"; }
+
+// Browser (Firefox)
+Mod+B { spawn "firefox"; }
+
+// Alternate Browser (Brave)
+Mod+Shift+B { spawn "brave"; }
+
+// File Manager (Thunar)
+Mod+E { spawn "thunar"; }
+
+// Rofi Launcher (fallback)
+Mod+D { spawn "rofi" "-show" "drun"; }
+
+// VS Code
+Mod+Shift+C { spawn "code"; }
+
+// Kate Editor
+Mod+Shift+T { spawn "kate"; }
+
+// OBS Studio
+Mod+O { spawn "obs"; }
+
+// Spotify
+Mod+P { spawn "spotify"; }
+
+// Discord
+Mod+Shift+D { spawn "discord"; }
+
+// Telegram
+Mod+Shift+T { spawn "telegram-desktop"; }
+
+// Steam (with iDroid sound)
+Mod+Shift+S { spawn "sh" "-c" "sound-system steam-launch && steam"; }
+
+// ProtonUp-Qt
+Mod+Alt+P { spawn "protonup-qt"; }
+
+// ================================
+// WEBAPPS (Mod + Ctrl)
+// ================================
+
+// YouTube WebApp
+Mod+Ctrl+Y { spawn "firefox" "--new-window" "--profile=Youtube" "https://youtube.com"; }
+
+// Twitch WebApp
+Mod+Ctrl+T { spawn "firefox" "--new-window" "--profile=Twitch" "https://twitch.tv"; }
+
+// Spotify WebApp
+Mod+Ctrl+S { spawn "firefox" "--new-window" "--profile=Spotify" "https://open.spotify.com"; }
+
+// Discord WebApp
+Mod+Ctrl+D { spawn "firefox" "--new-window" "--profile=Discord" "https://discord.com"; }
+
+// ================================
+// WINDOW MANAGEMENT
+// ================================
+
+// Close window (with J.A.R.V.I.S. sound)
+Mod+Q { spawn "sh" "-c" "niri msg action close-window && sound-system window-close"; }
+
+// Maximize column
+Mod+F { spawn "niri" "msg" "action" "maximize-column"; }
+
+// Fullscreen window
+Mod+Shift+F { spawn "sh" "-c" "niri msg action fullscreen-window && sound-system screenshot"; }
+
+// Toggle floating
+Mod+Ctrl+V { spawn "niri" "msg" "action" "toggle-window-floating"; }
+
+// Switch focus between floating and tiling
+Mod+Shift+V { spawn "niri" "msg" "action" "focus-column-first"; }
+
+// Toggle tabbed mode
+Mod+W { spawn "niri" "msg" "action" "toggle-column-tabbed"; }
+
+// Cycle preset width
+Mod+R { spawn "niri" "msg" "action" "cycle-column-width"; }
+
+// Cycle preset height
+Mod+Shift+R { spawn "niri" "msg" "action" "cycle-window-height"; }
+
+// Center column
+Mod+Alt+C { spawn "niri" "msg" "action" "center-column"; }
+
+// Decrease width
+Mod+Minus { spawn "niri" "msg" "action" "set-column-width" "-10%"; }
+
+// Increase width
+Mod+Equal { spawn "niri" "msg" "action" "set-column-width" "+10%"; }
+
+// Decrease height
+Mod+Shift+Minus { spawn "niri" "msg" "action" "set-window-height" "-10%"; }
+
+// Increase height
+Mod+Shift+Equal { spawn "niri" "msg" "action" "set-window-height" "+10%"; }
+
+// ================================
+// FOCUS MOVEMENT
+// ================================
+
+// Arrow keys
+Mod+Left { spawn "niri" "msg" "action" "focus-column-left"; }
+Mod+Right { spawn "niri" "msg" "action" "focus-column-right"; }
+Mod+Up { spawn "niri" "msg" "action" "focus-window-up"; }
+Mod+Down { spawn "niri" "msg" "action" "focus-window-down"; }
+
+// Vim-style (alternative)
+Mod+Alt+H { spawn "niri" "msg" "action" "focus-column-left"; }
+Mod+J { spawn "niri" "msg" "action" "focus-window-down"; }
+Mod+K { spawn "niri" "msg" "action" "focus-window-up"; }
+Mod+Semicolon { spawn "niri" "msg" "action" "focus-column-right"; }
+
+// ================================
+// WINDOW MOVEMENT
+// ================================
+
+// Move window left/right
+Mod+Ctrl+H { spawn "niri" "msg" "action" "move-column-left"; }
+Mod+Ctrl+Semicolon { spawn "niri" "msg" "action" "move-column-right"; }
+Mod+Ctrl+K { spawn "niri" "msg" "action" "move-window-up"; }
+Mod+Ctrl+J { spawn "niri" "msg" "action" "move-window-down"; }
+
+// Consume/Expel
+Mod+BracketLeft { spawn "niri" "msg" "action" "consume-column-left"; }
+Mod+BracketRight { spawn "niri" "msg" "action" "expel-column-right"; }
+
+// ================================
+// WORKSPACE MANAGEMENT
+// ================================
+
+// Switch to workspace (with sound feedback)
+Mod+1 { spawn "sh" "-c" "niri msg action focus-workspace 1 && sound-system workspace 1"; }
+Mod+2 { spawn "sh" "-c" "niri msg action focus-workspace 2 && sound-system workspace 2"; }
+Mod+3 { spawn "sh" "-c" "niri msg action focus-workspace 3 && sound-system workspace 3"; }
+Mod+4 { spawn "sh" "-c" "niri msg action focus-workspace 4 && sound-system workspace 4"; }
+Mod+5 { spawn "sh" "-c" "niri msg action focus-workspace 5 && sound-system workspace 5"; }
+Mod+6 { spawn "sh" "-c" "niri msg action focus-workspace 6 && sound-system workspace 6"; }
+Mod+7 { spawn "sh" "-c" "niri msg action focus-workspace 7 && sound-system workspace 7"; }
+Mod+8 { spawn "sh" "-c" "niri msg action focus-workspace 8 && sound-system workspace 8"; }
+Mod+9 { spawn "sh" "-c" "niri msg action focus-workspace 9 && sound-system workspace 9"; }
+Mod+0 { spawn "sh" "-c" "niri msg action focus-workspace 10 && sound-system workspace 10"; }
+
+// Move window to workspace
+Mod+Shift+1 { spawn "niri" "msg" "action" "move-window-to-workspace" "1"; }
+Mod+Shift+2 { spawn "niri" "msg" "action" "move-window-to-workspace" "2"; }
+Mod+Shift+3 { spawn "niri" "msg" "action" "move-window-to-workspace" "3"; }
+Mod+Shift+4 { spawn "niri" "msg" "action" "move-window-to-workspace" "4"; }
+Mod+Shift+5 { spawn "niri" "msg" "action" "move-window-to-workspace" "5"; }
+Mod+Shift+6 { spawn "niri" "msg" "action" "move-window-to-workspace" "6"; }
+Mod+Shift+7 { spawn "niri" "msg" "action" "move-window-to-workspace" "7"; }
+Mod+Shift+8 { spawn "niri" "msg" "action" "move-window-to-workspace" "8"; }
+Mod+Shift+9 { spawn "niri" "msg" "action" "move-window-to-workspace" "9"; }
+Mod+Shift+0 { spawn "niri" "msg" "action" "move-window-to-workspace" "10"; }
+
+// Next/Previous workspace
+Mod+BracketRight { spawn "niri" "msg" "action" "focus-workspace-next"; }
+Mod+BracketLeft { spawn "niri" "msg" "action" "focus-workspace-previous"; }
+
+// ================================
+// SCREENSHOTS
+// ================================
+
+// Full screenshot (with sound)
+Mod+Print { spawn "sh" "-c" "grim ~/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png && sound-system screenshot && notify-send 'Screenshot' 'Full screen captured' -i screenshot"; }
+
+// Screen capture (Niri built-in)
+Ctrl+Print { spawn "niri" "msg" "action" "screenshot-screen"; }
+
+// Window capture (Niri built-in)
+Alt+Print { spawn "niri" "msg" "action" "screenshot-window"; }
+
+// Region screenshot (slurp)
+Mod+Shift+Print { spawn "sh" "-c" "grim -g &quot;$(slurp)&quot; ~/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png && sound-system screenshot"; }
+
+// Photo export sound (manual trigger)
+Mod+Shift+E { spawn "sh" "-c" "sound-system photo-export && notify-send 'Export' 'Photo export complete, sir' -i camera-photo"; }
+
+// ================================
+// AUDIO CONTROLS (with adaptive sounds)
+// ================================
+
+XF86AudioMute { spawn "sound-system" "mute"; }
+XF86AudioRaiseVolume { spawn "sound-system" "volume-up"; }
+XF86AudioLowerVolume { spawn "sound-system" "volume-down"; }
+XF86AudioMicMute { spawn "sound-system" "mic-mute"; }
+
+// ================================
+// MEDIA CONTROLS
+// ================================
+
+XF86AudioPlay { spawn "playerctl" "play-pause"; }
+XF86AudioNext { spawn "playerctl" "next"; }
+XF86AudioPrev { spawn "playerctl" "previous"; }
+XF86AudioStop { spawn "playerctl" "stop"; }
+
+// ================================
+// BRIGHTNESS
+// ================================
+
+XF86MonBrightnessUp { spawn "brightnessctl" "set" "+5%"; }
+XF86MonBrightnessDown { spawn "brightnessctl" "set" "5%-"; }
+
+// ================================
+// GAMING MODE TOGGLE
+// ================================
+
+// Toggle gaming mode (switches to iDroid sounds)
+Mod+G { spawn "sound-system" "gaming-toggle"; }
+
+// ================================
+// UTILITY & TOOLS
+// ================================
+
+// KeyHints cheat sheet
+Mod+H { spawn "sh" "-c" "~/.config/wehttamsnaps/scripts/KeyHints.sh"; }
+
+// Color picker
+Mod+Shift+C { spawn "hyprpicker"; }
+
+// Clipboard history
+Mod+V { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+
+// Calculator
+Mod+Shift+Equals { spawn "rofi" "-show" "calc" "-modi" "calc:qalc"; }
+
+// ================================
+// QUICKSHELL / NOCTALIA
+// ================================
+
+// Control Center
+Mod+S { spawn "sh" "-c" "~/.config/wehttamsnaps/noctalia/quickshell control-center"; }
+
+// Settings
+Mod+Comma { spawn "sh" "-c" "~/.config/wehttamsnaps/noctalia/quickshell settings"; }
+
+// Wallpaper toggle
+Mod+Shift+W { spawn "sh" "-c" "~/.config/wehttamsnaps/scripts/wallpaper-toggle.sh"; }
+
+// ================================
+// J.A.R.V.I.S. INTEGRATION
+// ================================
+
+// Launch J.A.R.V.I.S. voice assistant (interactive mode)
+Mod+J { spawn "sh" "-c" "~/.config/wehttamsnaps/scripts/jarvis interactive"; }
+
+// J.A.R.V.I.S. visual menu
+Mod+Shift+J { spawn "sh" "-c" "~/.config/wehttamsnaps/scripts/jarvis-menu"; }
+
+// ================================
+// PHOTOGRAPHY WORKFLOW
+// ================================
+
+// Launch photography workflow
+Mod+Shift+P { spawn "sh" "-c" "sound-system workspace 3 && niri msg action focus-workspace 3 && darktable"; }
+
+// ================================
+// DEVELOPMENT
+// ================================
+
+// Git workflow
+Mod+Shift+G { spawn "sh" "-c" "lazygit"; }
+
+// ================================
+// SYSTEM MAINTENANCE
+// ================================
+
+// Update system
+Mod+Shift+U { spawn "sh" "-c" "alacritty -e sh -c 'paru -Syu && read'"; }
+
+// Clear orphaned packages
+Mod+Shift+O { spawn "sh" "-c" "paru -Qtdq | paru -Rns - && notify-send 'Orphans' 'Cleared orphaned packages' -i trash-empty"; }
+
+// Open system monitor
+Mod+Shift+M { spawn "gnome-system-monitor"; }
+
+// Open disk usage
+Mod+Shift+D { spawn "alacritty" "-e" "ncdu"; }
+
+// =============================================================================
+// END OF KEYBINDINGS
+// =============================================================================
+// Quick Reference:
+// Mod = SUPER (Windows key)
+// Mod+H = KeyHints (full cheat sheet)
+// Mod+G = Toggle Gaming Mode
+// Mod+J = J.A.R.V.I.S. Voice Assistant
+// Mod+Space = App Launcher
+// Mod+Enter = Terminal
+// Mod+Q = Close Window
+// Mod+1-0 = Workspaces
+// =============================================================================

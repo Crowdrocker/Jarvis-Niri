@@ -1,0 +1,41 @@
+# =============================================================================
+# WehttamSnaps - Gaming Package List
+# Additional packages for gaming and modding
+# =============================================================================
+# Usage: paru -S --needed - < gaming.list.txt
+# =============================================================================
+
+# === GAME LAUNCHERS ===
+heroic-games-launcher-bin
+legendary
+lutris
+protonup-qt
+gamescope
+
+# === MODDING TOOLS SUPPORT ===
+wine-gecko
+wine-mono
+lib32-gnutls
+lib32-giflib
+lib32-libpulse
+
+# === PERFORMANCE ===
+mangohud
+lib32-mangohud
+goverlay
+corectrl
+
+# === CONTROLLERS ===
+antimicrox
+sc-controller
+xpadneo-dkms
+
+# === RECORDING ===
+gpu-screen-recorder-git
+obs-vaapi
+wf-recorder
+
+# === GAME DEVELOPMENT ===
+godot
+unity-editor
+blender

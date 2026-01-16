@@ -1,0 +1,208 @@
+// =============================================================================
+// WEHTTAMSNAPS - NIRI WORKSPACE CONFIGURATION
+// 10 Organized Workspaces for Photography, Gaming, and Content Creation
+// =============================================================================
+// Last Updated: 2024-01-XX
+// Workspace Keybind: Mod + 1-0
+// =============================================================================
+
+// ================================
+// WORKSPACE DEFINITIONS
+// ================================
+
+// Workspace 1: Browser
+// Use: Web browsing, research, documentation
+// Apps: Firefox, Brave, Chrome
+workspace "1" {
+    open-on-output "DP-3"
+}
+
+// Workspace 2: Terminal / Development
+// Use: Coding, terminal work, system administration
+// Apps: Ghostty, VS Code, Kate, Neovim
+workspace "2" {
+    open-on-output "DP-3"
+}
+
+// Workspace 3: Gaming
+// Use: Gaming sessions, Steam, game launchers
+// Apps: Steam, Lutris, Heroic, Games
+// Sound Mode: iDroid (auto-switched by sound-system)
+workspace "3" {
+    open-on-output "DP-3"
+}
+
+// Workspace 4: Streaming / OBS
+// Use: Content creation, recording, streaming
+// Apps: OBS Studio, StreamElements, streaming tools
+workspace "4" {
+    open-on-output "DP-3"
+}
+
+// Workspace 5: Photography
+// Use: Photo editing, RAW processing
+// Apps: DigiKam, Darktable, GIMP, Krita
+// Sound Mode: J.A.R.V.I.S. (auto-switched by sound-system)
+workspace "5" {
+    open-on-output "DP-3"
+}
+
+// Workspace 6: Media / Video
+// Use: Video editing, composites, color grading
+// Apps: Blender, Kdenlive, Shotcut
+workspace "6" {
+    open-on-output "DP-3"
+}
+
+// Workspace 7: Communication
+// Use: Discord, Telegram, social media
+// Apps: Discord, WebCord, Telegram, Thunderbird
+workspace "7" {
+    open-on-output "DP-3"
+}
+
+// Workspace 8: Music / Audio
+// Use: Music playback, audio production
+// Apps: Spotify, VLC, MPV, Audacity
+workspace "8" {
+    open-on-output "DP-3"
+}
+
+// Workspace 9: Files / System
+// Use: File management, system monitoring
+// Apps: Thunar, GNOME System Monitor, Disks
+workspace "9" {
+    open-on-output "DP-3"
+}
+
+// Workspace 10: Miscellaneous / Overflow
+// Use: Extra workspace for overflow tasks
+// Apps: Any additional applications
+workspace "10" {
+    open-on-output "DP-3"
+}
+
+// ================================
+// WORKSPACE BEHAVIOR
+// ================================
+
+// Auto-back-and-forth: Return to previous workspace
+// This makes workspace switching more intuitive
+layout {
+    // When switching to an occupied workspace from that same workspace,
+    // go to the most recently visited workspace
+}
+
+// ================================
+// WORKSPACE AUTO-ASSIGNMENT
+// ================================
+
+// Note: Auto-assignment is handled by window rules in 20-window-rules.kdl
+// Applications are automatically assigned to their preferred workspace
+// when launched
+
+// Example assignments (see 20-window-rules.kdl for full list):
+// - Browsers → Workspace 1
+// - Terminals/Editors → Workspace 2
+// - Games/Steam → Workspace 3
+// - OBS → Workspace 4
+// - Photo apps → Workspace 5
+// - Video editors → Workspace 6
+// - Communication → Workspace 7
+// - Music players → Workspace 8
+// - File managers → Workspace 9
+
+// ================================
+// WORKSPACE SOUND MAPPING
+// ================================
+
+// Sound mode auto-detection (handled by sound-system script):
+// - Workspace 1, 4, 5, 6, 8, 9, 10 → J.A.R.V.I.S. (professional mode)
+// - Workspace 2, 3, 7 → iDroid (gaming/tactical mode)
+// - Gaming mode active (Mod+G) → iDroid everywhere
+
+// Override sound mode manually:
+// sound-system mode jarvis    # Force J.A.R.V.I.S.
+// sound-system mode idroid    # Force iDroid
+// sound-system auto-mode      # Auto-detect from workspace
+
+// ================================
+// WORKSPACE TEMPLATES
+// ================================
+
+// The following are suggested layouts for each workspace.
+// These are not enforced by Niri, but serve as guidelines.
+
+// === Workspace 1: Browser ===
+// Layout: Wide column (70%)
+// Typical arrangement: Browser (main) + Terminal (sidebar)
+
+// === Workspace 2: Terminal/Dev ===
+// Layout: Balanced (60% terminal, 40% editor)
+// Typical arrangement: Terminal + Editor + File Manager
+
+// === Workspace 3: Gaming ===
+// Layout: Fullscreen
+// Typical arrangement: Game (fullscreen)
+
+// === Workspace 4: Streaming ===
+// Layout: Custom
+// Typical arrangement: OBS (fullscreen) + Preview (floating)
+
+// === Workspace 5: Photography ===
+// Layout: Floating windows
+// Typical arrangement: Darktable (main) + GIMP (floating) + Reference (floating)
+
+// === Workspace 6: Media/Video ===
+// Layout: Wide column
+// Typical arrangement: Video editor (main) + Preview (floating)
+
+// === Workspace 7: Communication ===
+// Layout: Floating windows
+// Typical arrangement: Discord (floating) + Browser (floating)
+
+// === Workspace 8: Music ===
+// Layout: Floating or Wide
+// Typical arrangement: Spotify (floating) or VLC (wide)
+
+// === Workspace 9: Files ===
+// Layout: Balanced
+// Typical arrangement: Thunar (main) + Terminal (sidebar)
+
+// === Workspace 10: Misc ===
+// Layout: Flexible
+// Typical arrangement: Whatever you need
+
+// ================================
+// WORKSPACE KEYBINDINGS (Quick Reference)
+// ================================
+
+// Switch to workspace:
+// Mod + 1-0
+
+// Move window to workspace:
+// Mod + Shift + 1-0
+
+// Next/Previous workspace:
+// Mod + BracketRight (next)
+// Mod + BracketLeft (previous)
+
+// Gaming workspace quick access:
+// Mod + 3 (direct to gaming)
+
+// Photography workspace quick access:
+// Mod + 5 (direct to photography)
+
+// Streaming workspace quick access:
+// Mod + 4 (direct to streaming)
+
+// =============================================================================
+// END OF WORKSPACE CONFIGURATION
+// =============================================================================
+// Tips:
+// 1. Use Mod+Shift+Number to move windows between workspaces
+// 2. Sound mode auto-switches based on workspace
+// 3. Use Mod+G to toggle gaming mode (overrides workspace sounds)
+// 4. Each workspace plays a sound when switching (J.A.R.V.I.S. or iDroid)
+// 5. Customize workspace layouts in 20-window-rules.kdl
+// =============================================================================

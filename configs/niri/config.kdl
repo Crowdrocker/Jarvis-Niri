@@ -1,0 +1,279 @@
+// =============================================================================
+//   __  __          _    _             _____ 
+//  |  \/  |        | |  | |           / ____|
+//  | \  / | ___  __| |__| | ___ _ __ | |     ___  _ __ ___
+//  | |\/| |/ _ \/ _` | __| |/ _ \ '_ \| |    / _ \| '__/ _ \
+//  | |  | |  __/ (_| | |_| |  __/ | | | |___| (_) | | |  __/
+//  |_|  |_|\___|\__,_|\__|_|\___|_| |_|\_____\___/|_|  \___|
+//  
+//  WehttamSnaps - J.A.R.V.I.S. Themed Niri Configuration
+//  GitHub: https://github.com/Crowdrocker
+// =============================================================================
+//  Last Updated: $(date +%Y-%m-%d)
+//  System: snaps-pc | User: wehttamsnaps | Monitor: DP-3 (1920x1080@60Hz)
+//  GPU: AMD RX 580 | RAM: 16GB | CPU: i7-4790
+// =============================================================================
+
+// ================================
+// INPUT & INPUT DEVICE CONFIG
+// ================================
+
+input {
+    keyboard {
+        repeat-delay 400
+        repeat-rate 40
+        
+        xkb {
+            layout "us"
+            variant ""
+            options "caps:escape"
+        }
+    }
+
+    touchpad {
+        tap
+        dwt
+        disable-while-typing
+        natural-scroll
+        accel-speed 0.0
+        accel-profile "flat"
+        scroll-method "two-finger"
+        tap-button-map "left-middle-right"
+    }
+
+    mouse {
+        accel-speed 0.0
+        accel-profile "flat"
+        scroll-method "no-scroll"
+    }
+
+    tablet {
+        map-to-output "DP-3"
+    }
+
+    touch {
+        map-to-output "DP-3"
+    }
+}
+
+// ================================
+// OUTPUT CONFIGURATION
+// ================================
+
+output "DP-3" {
+    // 1920x1080 @ 60Hz for Dell XPS 8700 + RX 580
+    mode {
+        width 1920
+        height 1080
+        refresh 60000
+    }
+
+    position x=0 y=0
+
+    scale 1.0
+
+    // J.A.R.V.I.S. themed colors - Catppuccin Mocha
+    background-color "#1e1e2e"
+}
+
+// ================================
+// LAYOUT & TILING
+// ================================
+
+layout {
+    gaps 8
+    tabs "horizontal"
+    default-column-width { proportion 0.5; }
+    default-column-height { proportion 0.5; }
+
+    focus-ring {
+        off
+    }
+
+    border {
+        enabled false
+        width 2
+    }
+
+    // J.A.R.V.I.S. accent color
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    preset-window-heights {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    center-focused-column "always"
+}
+
+// ================================
+// WINDOW RULES
+// ================================
+
+// Include modular window rules
+include "conf.d/20-window-rules.kdl"
+
+// ================================
+// WORKSPACE CONFIGURATION
+// ================================
+
+// Include modular workspace config
+include "conf.d/30-workspaces.kdl"
+
+// ================================
+// KEYBINDINGS
+// ================================
+
+// Include modular keybinds
+include "conf.d/10-keybinds.kdl"
+
+// ================================
+// ENVIRONMENT VARIABLES
+// ================================
+
+environment {
+    // Wayland
+    display ":1"
+    wayland_display "wayland-1"
+    
+    // XDG
+    xdg_session_type "wayland"
+    xdg_current_desktop "niri"
+    
+    // GTK
+    gtk_theme "Catppuccin-Mocha-Standard-Blue-dark"
+    icon_theme "Papirus-Dark"
+    cursor_theme "Nordic-cursors"
+    
+    // Qt
+    qt_qt_platform_theme "qt6ct"
+    
+    // Terminal
+    terminal "ghostty"
+    
+    // Editor
+    editor "kate"
+    
+    // Browser
+    browser "firefox"
+    
+    // Gaming
+    steam_compatibility_tools "~/.steam/root/compatibilitytools.d"
+    
+    // Audio
+    pulse_server "unix:/run/user/1000/pulse/native"
+    
+    // Performance
+    mangohud_dlsym "1"
+    
+    // Theme colors
+    bg "#1e1e2e"
+    fg "#cdd6f4"
+    primary "#89b4fa"
+    secondary "#f38ba8"
+    accent "#a6e3a1"
+    warning "#f9e2af"
+    error "#fab387"
+}
+
+// ================================
+// AUTOSTART APPLICATIONS
+// ================================
+
+// Include modular autostart config
+include "conf.d/50-autostart.kdl"
+
+// ================================
+// ANIMATIONS & TRANSITIONS
+// ================================
+
+animations {
+    // Disable animations in gaming mode for performance
+    enable "true"
+    slowdown 1.0
+
+    workspace-switch {
+        duration-ms 300
+        curve "ease-out-quad"
+    }
+
+    horizontal-view-movement {
+        duration-ms 300
+        curve "ease-out-quad"
+    }
+
+    window-open {
+        duration-ms 300
+        curve "ease-out-quad"
+    }
+
+    window-close {
+        duration-ms 300
+        curve "ease-out-quad"
+    }
+}
+
+// ================================
+// PREFABERENCES
+// ================================
+
+prefer-no-csd
+
+// Floating windows
+float "nwg-look"
+float "pavucontrol"
+float "blueman-manager"
+float "nm-connection-editor"
+float "qt6ct"
+float "kvantummanager"
+float "obs"
+float "steam"
+float "discord"
+float "telegram-desktop"
+
+// Centered floating windows
+center "nwg-look"
+center "pavucontrol"
+center "blueman-manager"
+center "qt6ct"
+center "kvantummanager"
+
+// ================================
+// HOTKEY OVERLAY
+// ================================
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+// ================================
+// RENDERER
+// ================================
+
+renderer {
+    // Force software rendering if needed (uncomment for troubleshooting)
+    // force-boolean-setting "false"
+}
+
+// ================================
+// SYSTEM TRAY
+// ================================
+
+// Niri doesn't have a built-in system tray
+// Use Quickshell/Noctalia for tray functionality
+
+// =============================================================================
+// END OF CONFIGURATION
+// =============================================================================
+// Tips:
+// 1. Reload config: Mod + Shift + Ctrl + R
+// 2. View hotkeys: Mod + Shift + /
+// 3. Quit Niri: Ctrl + Alt + Delete
+// 4. Open KeyHints: Mod + H
+// 5. Toggle Gaming Mode: Mod + G
+// =============================================================================
